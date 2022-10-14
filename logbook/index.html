@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Pine-Portal" />
+        <meta name="author" content="Pino, Janica Nyle" />
+        <title>Attendance Logbook | Pine Portal</title>
+        <link rel="icon" type="image/x-icon" href="../img/main-logo.jpg" />
+        <link href="../style.css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    </head>
+
+    <header id="header" class="alt">
+        <nav id="nav">
+            <div id="menu">
+                <img src="../img/main-logo-white.png">
+                <h1><a href="index.html">PINE PORTAL</a></h1>
+                <ul>
+                    <li><a class="nav-line" href="../index.html">HOME</a></li>
+                    <li><a class="nav-line" href="../about.html">ABOUT ME</a></li>
+                    <li><a class="nav-line" href="../works.html">WORKS</a></li>
+                    <li><a class="nav-line" href="../entries.html">ENTRIES</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <body class="logbook-body">
+        <div>
+            <h1 class="logbook-title">ATTENDANCE LOGBOOK</h1>
+        </div>
+        <button onclick="toggle()" class="entry" id="entry">Add an Entry</button>
+        <div class="input-table" id="input-form">
+            <h1>Enter details using this form</h1>
+            <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Enter you Last Name" required> 
+                </div>
+                <div>
+                    <label>First Name</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Enter your First Name" required>
+                </div>
+                <div class="same-row">
+                    <label>Day</label>
+                    <input type="date" name="date" id="date" placeholder="Enter date">
+                </div>
+                <div class="same-row">
+                    <label>Time</label>
+                    <input type="time" name="time" id="time" placeholder="Enter time">
+                </div>
+                <div class="same-row">
+                    <label for="actions">Choose action: </label>
+                    <select id="actions">
+                        <option value="login">Log In</option>
+                        <option value="logout">Log Out</option>
+                    </select>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+
+        <div class="logbook-display">
+            <h1>Attendance List</h1>
+            <h4 id="count"></h4>
+            <table class="display" id="list">
+                <thead>
+                    <tr>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                        <th>Others</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Entries will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+        <script src="main.js"></script>
+    </body>
+
+</html>
